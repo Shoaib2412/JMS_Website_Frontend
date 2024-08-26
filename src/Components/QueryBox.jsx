@@ -24,7 +24,7 @@ function QueryBox() {
       if (response.status == 200) {
         alert("Thank you for your feedback");
       } else {
-        alert("Message Cennot be sent");
+        alert("Message Cannot be sent");
       }
     } catch (error) {
       alert("Internal Server Error");
@@ -39,9 +39,9 @@ function QueryBox() {
         </h1>
       </div>
       <form onSubmit={handlesubmit} className="">
-        <div className="flex">
-          <div className="flex-1 pr-8 space-y-6">
-            <div className="flex space-x-4">
+        <div className="flex flex-col md:flex-row gap-[30px]">
+          <div className="flex-1 md:pr-8 pr-4 space-y-6 bg-[#36454F] md:p-6 p-4 rounded-md">
+            <div className="flex md:flex-row flex-col md:space-x-4 space-y-4 md:space-y-0">
               <input
                 type="text"
                 className="flex-1 p-2 border rounded-md bg-gray-800 text-white"
@@ -67,29 +67,29 @@ function QueryBox() {
             <textarea
               className="w-full p-2 border rounded-md bg-gray-800 text-white"
               placeholder="Message"
-              rows="5"
+              rows="10"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-          </div>
-          <div className="w-1/3 space-y-6">
-            <div className="p-2 border rounded-md bg-gray-800 text-white">
-              <p className="font-bold">Address</p>
-              <p>123 Clubhouse Ave, Suite 456</p>
-            </div>
-            <div className="p-2 border rounded-md bg-gray-800 text-white">
-              <p className="font-bold">Email ID</p>
-              <p>contact@club.com</p>
+            <div className="flex justify-center mt-4">
+              <button
+                type="submit"
+                className="px-16 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700"
+              >
+                Send
+              </button>
             </div>
           </div>
-        </div>
-        <div className="text-left mt-4 ">
-          <button
-            type="submit"
-            className="px-16 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700"
-          >
-            Send
-          </button>
+          <div className="w-full md:w-1/3 space-y-6">
+            <div className="p-2 border rounded-md bg-[#36454F] text-white h-60">
+              <p className="text-center text-[30px] pt-[50px]">Address</p>
+              <p className="text-center pt-[25px]">123 Clubhouse Ave, Suite 456</p>
+            </div>
+            <div className="p-2 border rounded-md bg-[#36454F] text-white h-60">
+              <p className="text-center text-[30px] pt-[50px]">Email ID</p>
+              <p className="text-center pt-[25px]">contact@club.com</p>
+            </div>
+          </div>
         </div>
       </form>
     </div>

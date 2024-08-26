@@ -2,24 +2,24 @@ import React from "react";
 
 function Part1() {
   return (
-    <div className="w-full">
+    <div className="relative w-full">
       <div className="relative">
         <img
           src="../../Images/MatheMatics_image.jpg"
           alt=""
-          className="object-fill w-full opacity-20"
-          style={{ height: "calc(100vh - 10vh)" }}
+          className="object-cover w-full opacity-20 h-[calc(110vh-10vh)]"
         />
-        <div className="absolute top-[30%] left-[2%]">
-          <div className="text-green-500 font-mono" style={{fontSize: "5rem"}}>
-            Jadavpur University Maths Soceity
-          </div>
-          <div className="text-blue-700 font-mono ml-[30%] mt-12 text-6xl">
-            Welcomes You
-          </div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black via-transparent to-black opacity-60"/>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <img
+            src="../../Images/logo.png"
+            alt=""
+            className="w-50 h-500"
+          />
         </div>
       </div>
     </div>
+
   );
 }
 

@@ -15,7 +15,7 @@ function Register() {
       alert("Passwords do not match!");
       return;
     }
-    const response = await fetch("http://localhost:8000/users/signup", {
+    const response = await fetch("http://localhost:8000/signup", {
       method: 'POST', 
       headers: {
         'Content-Type': 'application/json'
@@ -30,7 +30,7 @@ function Register() {
       })
     })
     if(response.status === 200){
-      window.location.pathname = '/verifyOTP';
+      window.location.pathname = '/login';
     }
     else{
       alert("You have already registered before. Please remove your earlier registration")
